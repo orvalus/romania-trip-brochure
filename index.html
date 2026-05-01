@@ -81,9 +81,9 @@
       .grid-cols-3{grid-template-columns:repeat(2,1fr)}
       .slide>.content{padding:clamp(1rem,3vw,2rem)}
     }
-    @media (max-width:640px){
-      .grid-cols-3,.grid-cols-2,.hotel-grid{grid-template-columns:1fr}
-      .slide>.content{padding:clamp(0.75rem,2.5vw,1.25rem)}
+     @media (max-width:640px){
+      .slide{overflow-y:auto!important;-webkit-overflow-scrolling:touch;align-items:flex-start!important}
+      .slide>.content{padding:clamp(0.75rem,2.5vw,1.25rem) clamp(0.75rem,2.5vw,1.25rem) 100px!important}
       .bg-panel{min-height:auto!important;padding:1.25rem!important;border-radius:20px}
       .itinerary-grid{gap:1rem}
       .image-grid{min-height:200px;border-radius:16px}
@@ -113,7 +113,7 @@
   <div class="image-overlay"></div>
   <div class="gradient-mesh"></div>
   <div class="content text-center max-w-[1000px]">
-    <div class="reveal mini-label mb-5">Private itinerary · 3 couples · June 25 – July 1, 2026</div>
+    <div class="reveal mini-label mb-5">Private itinerary · June 25 – July 1, 2026</div>
     <h1 class="reveal font-display text-[clamp(3.4rem,8vw,6.2rem)] font-semibold leading-[0.95] tracking-tight">Romania: A Private Journey</h1>
     <p class="reveal mt-5 text-[clamp(1rem,2vw,1.35rem)] text-text-secondary tracking-[0.28em] uppercase">Transylvania Experience</p>
     <div class="reveal mt-10 flex justify-center"><div class="deco-line"></div></div>
