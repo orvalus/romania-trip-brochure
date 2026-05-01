@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @theme {
@@ -440,8 +441,8 @@
       </div>
       <div class="reveal lux-card p-8">
         <h3 class="font-display text-[1.75rem]">Option 2: Self-Drive</h3>
-        <p class="mt-5 text-text-secondary leading-7">Best suited for travelers who specifically enjoy driving and want full control over timing and stops.</p>
-        <p class="mt-4 text-text-muted text-[0.95rem]">A flexible alternative, but less seamless for a group journey with multiple couples and luggage.</p>
+        <p class="mt-5 text-text-secondary leading-7">A flexible, independent way to experience the route, best for a group comfortable with shared driving.</p>
+        <p class="mt-4 text-text-muted text-[0.95rem]">Full flexibility on timing and stops — your journey, your rhythm.</p>
       </div>
     </div>
 
@@ -507,8 +508,210 @@
   <div class="page-num">10</div>
 </div>
 
-<!-- CLOSING -->
+<!-- ESTIMATED COSTS -->
 <div class="slide" data-slide="12">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:260px;height:260px;top:8%;right:6%;background:var(--color-accent-1);opacity:.08"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-80px;left:-60px;background:var(--color-accent-3);opacity:.08"></div>
+    <div class="blob" style="width:180px;height:180px;top:42%;left:18%;background:var(--color-accent-2);opacity:.07"></div>
+  </div>
+  <div class="content">
+    <div class="reveal text-center mb-12">
+      <h2 class="font-display text-[clamp(2.8rem,5.5vw,4.6rem)] leading-tight mb-3">Estimated Costs</h2>
+      <div class="mini-label">Clear, Realistic, and Designed for Comfort</div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-6">
+
+      <!-- OPTION A: SELF-DRIVE / SHARED VAN -->
+      <div class="reveal lux-card p-6 flex flex-col">
+        <div class="mini-label mb-2">Option A</div>
+        <h3 class="font-display text-[1.7rem] leading-tight mb-1">Self-Drive / Shared Van</h3>
+        <div class="text-text-muted text-[0.65rem] tracking-wider uppercase mb-5">Flexible · Independent · Premium Experience</div>
+
+        <!-- Three Cost Cards -->
+        <div class="grid grid-cols-3 gap-2 mb-5">
+          <!-- Accommodation -->
+          <div class="rounded-xl border border-glass-border bg-glass-bg p-2.5 flex flex-col">
+            <div class="flex items-start gap-2 mb-1.5">
+              <i class="fas fa-bed" style="color: var(--color-accent-1); font-size: 1.2rem; opacity: 0.85; flex-shrink: 0; margin-top: 0.1rem;"></i>
+              <div>
+                <div class="mini-label">Where You Sleep</div>
+                <h4 class="font-display text-[0.85rem] text-text-secondary">Accommodation</h4>
+              </div>
+            </div>
+            <div class="space-y-2 mt-auto pt-2.5 border-t border-glass-border">
+              <div class="flex items-center justify-between">
+                <span class="text-text-muted uppercase text-[0.55rem] tracking-wide">Premium</span>
+                <span class="font-display text-[1.05rem] text-text-secondary">~$950</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-text-muted uppercase text-[0.55rem] tracking-wide">4★ Boutique</span>
+                <span class="font-display text-[1.05rem] text-text-secondary">~$550</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meals & Wine -->
+          <div class="rounded-xl border border-glass-border bg-glass-bg p-2.5 flex flex-col">
+            <div class="flex items-start gap-2 mb-1.5">
+              <i class="fas fa-wine-glass" style="color: var(--color-accent-1); font-size: 1.2rem; opacity: 0.85; flex-shrink: 0; margin-top: 0.1rem;"></i>
+              <div>
+                <div class="mini-label">Meals & Wine</div>
+                <h4 class="font-display text-[0.85rem] text-text-secondary">Dining & Wine</h4>
+              </div>
+            </div>
+            <div class="space-y-1 mt-auto pt-2.5 border-t border-glass-border text-[0.7rem] text-text-secondary">
+              <div>160 / day</div>
+              <div>~$800 total</div>
+              <div class="text-text-muted text-[0.6rem] mt-1.5 leading-tight">Includes lunch, dinner, one bottle wine/evening</div>
+            </div>
+          </div>
+
+          <!-- Getting Around -->
+          <div class="rounded-xl border border-glass-border bg-glass-bg p-2.5 flex flex-col">
+            <div class="flex items-start gap-2 mb-1.5">
+              <i class="fas fa-van-shuttle" style="color: var(--color-accent-1); font-size: 1.2rem; opacity: 0.85; flex-shrink: 0; margin-top: 0.1rem;"></i>
+              <div>
+                <div class="mini-label">Getting Around</div>
+                <h4 class="font-display text-[0.85rem] text-text-secondary">Passenger Van Rental</h4>
+              </div>
+            </div>
+            <div class="space-y-1 mt-auto pt-2.5 border-t border-glass-border text-[0.7rem] text-text-secondary">
+              <div>~$515 rental (6 days)</div>
+              <div>~$130 / family</div>
+              <div class="border-t border-glass-border/50 my-1.5"></div>
+              <div>~$280 fuel (total)</div>
+              <div>~$70 / family</div>
+              <div class="text-text-muted text-[0.6rem] mt-1.5 leading-tight">Full coverage, no deposit</div>
+              <div class="text-text-muted text-[0.6rem]">Subject to availability</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total Cost Section -->
+        <div class="bg-panel rounded-xl p-4 mb-4 text-center">
+          <div class="mini-label mb-3">Total Estimated Cost (Per Family)</div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <div class="text-text-muted uppercase text-[0.6rem] tracking-wide mb-1">4★ Boutique</div>
+              <div class="font-display text-[1.3rem] text-text-secondary">~$1,750</div>
+            </div>
+            <div>
+              <div class="text-text-muted uppercase text-[0.6rem] tracking-wide mb-1">Premium</div>
+              <div class="font-display text-[1.3rem] text-text-secondary">~$2,150</div>
+            </div>
+          </div>
+          <div class="text-text-muted text-[0.6rem] mt-1">Incl. tickets (~$200) & fuel (~$70) per family</div>
+        </div>
+
+        <!-- Bottom Info -->
+        <div class="space-y-2.5 text-[0.75rem]">
+          <div class="flex items-center gap-2.5">
+            <i class="fas fa-calendar-days" style="color: var(--color-accent-1); font-size: 1.3rem; opacity: 0.85; flex-shrink: 0;"></i>
+            <div>
+              <div class="text-text-secondary">~$290–350 per day per family</div>
+              <div class="text-text-muted text-[0.6rem] uppercase tracking-wide mt-0.5">Average Per Day</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5">
+            <i class="fas fa-arrows-rotate" style="color: var(--color-accent-1); font-size: 1.3rem; opacity: 0.85; flex-shrink: 0; margin-top: 0.1rem;"></i>
+            <div class="text-text-muted leading-snug">Flexible — omit any day without affecting the flow</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTION B: FULLY GUIDED TOUR -->
+      <div class="reveal lux-card p-6 flex flex-col">
+        <div class="mini-label mb-2">Option B</div>
+        <h3 class="font-display text-[1.7rem] leading-tight mb-1">Fully Guided Tour (Optional Upgrade)</h3>
+        <div class="text-text-muted text-[0.65rem] tracking-wider uppercase mb-5">Structured · Fully Organized · Hands-Off Experience</div>
+
+        <!-- Cost Section -->
+        <div class="space-y-3 flex-1">
+          <div class="rounded-xl border border-glass-border bg-glass-bg p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <i class="fas fa-users" style="color: var(--color-accent-1); font-size: 1.3rem; opacity: 0.85; flex-shrink: 0;"></i>
+              <div class="text-[0.7rem] text-text-muted uppercase tracking-wide">Cost</div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="font-display text-[1.3rem] text-text-secondary">~$2,000–3,000 per family</div>
+            </div>
+            <div class="text-[0.6rem] text-text-muted mt-1.5 leading-tight">Final price varies based on the operator and accommodation tier selected</div>
+          </div>
+
+          <!-- Meals & Wine -->
+          <div class="rounded-xl border border-glass-border bg-glass-bg p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <i class="fas fa-utensils" style="color: var(--color-accent-1); font-size: 1.3rem; opacity: 0.85; flex-shrink: 0;"></i>
+              <div class="text-[0.7rem] text-text-muted uppercase tracking-wide">Meals & Wine (Not Included)</div>
+            </div>
+            <div class="space-y-1 text-[0.7rem]">
+              <div class="text-text-secondary">160 / day</div>
+              <div class="text-text-secondary">~$800 total</div>
+              <div class="text-text-muted text-[0.6rem] mt-1.5 leading-tight">Includes lunch, dinner, one bottle wine/evening</div>
+            </div>
+          </div>
+
+          <!-- Total Estimated Cost -->
+          <div class="bg-panel rounded-xl p-4 text-center">
+            <div class="mini-label mb-3">Total Estimated Cost (Per Family)</div>
+            <div class="font-display text-[1.3rem] text-text-secondary">~$2,700–3,800</div>
+            <div class="text-text-muted text-[0.6rem] uppercase tracking-wide mt-1">Including meals & wine</div>
+          </div>
+
+          <!-- What's Included -->
+          <div class="rounded-xl border border-glass-border bg-glass-bg p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <i class="fas fa-ticket" style="color: var(--color-accent-1); font-size: 1.3rem; opacity: 0.85; flex-shrink: 0;"></i>
+              <div class="text-[0.7rem] text-text-muted uppercase tracking-wide">What's Included</div>
+            </div>
+            <ul class="space-y-1.5">
+              <li class="flex items-start gap-2 text-[0.75rem] text-text-secondary">
+                <i class="fas fa-check" style="color: var(--color-accent-1); margin-top: 0.2rem; flex-shrink: 0;"></i>
+                <span>Transport with driver and guide</span>
+              </li>
+              <li class="flex items-start gap-2 text-[0.75rem] text-text-secondary">
+                <i class="fas fa-check" style="color: var(--color-accent-1); margin-top: 0.2rem; flex-shrink: 0;"></i>
+                <span>Accommodation</span>
+              </li>
+              <li class="flex items-start gap-2 text-[0.75rem] text-text-secondary">
+                <i class="fas fa-check" style="color: var(--color-accent-1); margin-top: 0.2rem; flex-shrink: 0;"></i>
+                <span>Entry tickets to main attractions (~$40/day value)</span>
+              </li>
+              <li class="flex items-start gap-2 text-[0.75rem] text-text-secondary">
+                <i class="fas fa-check" style="color: var(--color-accent-1); margin-top: 0.2rem; flex-shrink: 0;"></i>
+                <span>Full itinerary coordination</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Important Notice -->
+          <div class="rounded-xl border border-glass-border bg-glass-bg p-4 flex gap-2.5">
+            <i class="fas fa-circle-info" style="color: var(--color-accent-1); font-size: 1.3rem; opacity: 0.85; flex-shrink: 0;"></i>
+            <div>
+              <div class="text-[0.65rem] text-text-muted uppercase tracking-wide mb-1">Important</div>
+              <div class="text-[0.75rem] text-text-secondary">Fixed itinerary — days cannot be removed or adjusted.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Comparison Text -->
+    <div class="reveal mt-8 text-center">
+      <p class="text-[0.8rem] text-text-secondary">
+        <span class="text-[1.1rem] text-accent-1 mr-2">✦</span>
+        The guided option offers a fully organized experience, while the self-drive option provides greater flexibility and a significantly lower overall cost.
+      </p>
+    </div>
+  </div>
+  <div class="page-num">11</div>
+</div>
+
+<!-- CLOSING -->
+<div class="slide" data-slide="13">
   <img class="full-image" src="images/last_page.jpeg" alt="Sibiu closing">
   <div class="image-overlay" style="background:linear-gradient(180deg, rgba(7,6,5,.32) 0%, rgba(7,6,5,.66) 58%, rgba(7,6,5,.84) 100%)"></div>
   <div class="gradient-mesh">
@@ -538,7 +741,7 @@
   <button class="nav-btn" onclick="changeSlide(-1)">&#8249;</button>
   <div class="slide-dots" id="dots"></div>
   <button class="nav-btn" onclick="changeSlide(1)">&#8250;</button>
-   <span class="slide-counter" id="counter">1 / 12</span>
+   <span class="slide-counter" id="counter">1 / 13</span>
 </div>
 
 <script>
