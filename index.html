@@ -54,7 +54,6 @@
     .lux-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(16px);border-radius:24px;box-shadow:0 20px 50px rgba(0,0,0,.22)}
     .bg-panel{background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px);border-radius:28px}
     .mini-label{letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;color:var(--color-text-muted)}
-    .page-kicker{letter-spacing:.35em;text-transform:uppercase;font-size:.74rem;color:var(--color-accent-2)}
     .badge{display:inline-flex;padding:.45rem .8rem;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);color:var(--color-accent-2);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase}
      .page-num{position:absolute;right:42px;bottom:34px;z-index:3;font-size:.76rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.62)}
      a{color:var(--color-accent-1);text-decoration:none;transition:opacity .3s ease}
@@ -110,7 +109,7 @@
 
 <!-- COVER PAGE -->
 <div class="slide active" data-slide="1">
-  <img class="hero-image" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Castelul_Peles%2C_Sinaia_-_Vedere_panoramica.jpg" alt="Peles Castle panoramic">
+  <img class="hero-image" src="images/peles.jpg" alt="Peles Castle panoramic">
   <div class="image-overlay"></div>
   <div class="gradient-mesh"></div>
   <div class="content text-center max-w-[1000px]">
@@ -124,7 +123,7 @@
 
 <!-- WHY ROMANIA -->
 <div class="slide" data-slide="2">
-  <img class="full-image" src="https://cdn.website-editor.net/d32a6d22b5134843a6dbfa52b47c4e8c/dms3rep/multi/transfagarasan_meilleure_route_monde_carpates_blog_agence_voyage_roumanie.jpg" alt="Transfagarasan aerial">
+  <img class="full-image" src="images/transfagarasan.jpg" alt="Transfagarasan aerial">
   <div class="image-overlay" style="background:linear-gradient(90deg, rgba(8,7,5,.78) 0%, rgba(8,7,5,.48) 45%, rgba(8,7,5,.70) 100%)"></div>
   <div class="gradient-mesh"><div class="blob" style="width:380px;height:380px;top:-120px;left:-80px;background:var(--color-accent-1);opacity:.12"></div><div class="blob" style="width:260px;height:260px;bottom:-70px;right:-40px;background:var(--color-accent-3);opacity:.10"></div></div>
   <div class="content">
@@ -153,37 +152,37 @@
     <h2 class="reveal font-display text-[clamp(2.5rem,5vw,4.2rem)] leading-none mb-14">Journey highlights</h2>
     <div class="grid grid-cols-3 gap-6">
       <div class="reveal lux-card p-6">
-        <img class="card-thumb" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/c1069b26e243bd9fd4c2cc88c69857ba5ad6af15.jpg" alt="Peles Castle" onclick="openLightbox(this.src)">
+        <img class="card-thumb" src="images/peles_thumb.jpg" alt="Peles Castle" onclick="openLightbox(this.src)">
         <div class="mini-label mb-3">Royal grandeur</div>
         <h3 class="font-display text-[1.7rem] leading-tight">Peleș Castle</h3>
         <p class="mt-3 text-text-secondary leading-7">Imperial architecture in the heart of the Carpathians. Opulent interiors and a mountain view that captures your soul.</p>
       </div>
       <div class="reveal lux-card p-6">
-        <img class="card-thumb" src="https://cdn-imgix.headout.com/media/images/cb065839aac5740c5f391eff83ef9fb4-Bran%20Castle%20at%20sunset.jpeg" alt="Bran Castle" onclick="openLightbox(this.src)">
+        <img class="card-thumb" src="images/bran_thumb.jpg" alt="Bran Castle" onclick="openLightbox(this.src)">
         <div class="mini-label mb-3">Legend & myth</div>
         <h3 class="font-display text-[1.7rem] leading-tight">Bran Castle</h3>
         <p class="mt-3 text-text-secondary leading-7">Dramatic, gothic, and full of stories. A fortress best understood over wine than any guidebook.</p>
       </div>
       <div class="reveal lux-card p-6">
-        <img class="card-thumb" src="https://www.turistulliber.ro/wp-content/uploads/2022/11/Piata-Sfatului-Brasov-1536x864.jpg" alt="Brasov Council Square" onclick="openLightbox(this.src)">
+        <img class="card-thumb" src="images/brasov_thumb.jpg" alt="Brasov Council Square" onclick="openLightbox(this.src)">
         <div class="mini-label mb-3">Medieval rhythm</div>
         <h3 class="font-display text-[1.7rem] leading-tight">Brașov</h3>
         <p class="mt-3 text-text-secondary leading-7">Elegant squares, cobblestone streets, and an urban pace that never rushes.</p>
       </div>
       <div class="reveal lux-card p-6">
-        <img class="card-thumb" src="https://turismistoric.ro/wp-content/uploads/2023/12/viscri-1024x875.jpg" alt="Viscri" onclick="openLightbox(this.src)">
+        <img class="card-thumb" src="images/viscri_thumb.jpg" alt="Viscri" onclick="openLightbox(this.src)">
         <div class="mini-label mb-3">Village authenticity</div>
         <h3 class="font-display text-[1.7rem] leading-tight">Viscri</h3>
-        <p class="mt-3 text-text-secondary leading-7">A UNESCO village where traditions feel natural, not performed. Century-old houses and Saxon heritage.</p>
+        <p class="mt-3 text-text-secondary leading-7">A <span style="color:#c4643d">UNESCO World Heritage</span> site where traditions feel natural, not performed. Century-old houses and Saxon heritage.</p>
       </div>
       <div class="reveal lux-card p-6">
-        <img class="card-thumb" src="https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-6/481905967_686380767047452_4306337197556132403_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=OAg2TSH9j5cQ7kNvwGdhAJ8&_nc_oc=Adqmnrghhy0C_70PFgwB4yeCnNHMx6h-2dAxL7KHOGL_ZQOUCb_vyfNJe08AKFCbzEI&_nc_zt=23&_nc_ht=scontent-lga3-3.xx&_nc_gid=9V7BSvFd_LwT8hKv4rFTjw&_nc_ss=7b2a8&oh=00_Af6R-h4uTjaRPLaRzH2TQkIYP3uGbnMdiuhPtduUiYj6dg&oe=69F9C23B" alt="Sighisoara" onclick="openLightbox(this.src)">
+        <img class="card-thumb" src="images/sighisoara_thumb.jpg" alt="Sighisoara" onclick="openLightbox(this.src)">
         <div class="mini-label mb-3">Citadel color</div>
         <h3 class="font-display text-[1.7rem] leading-tight">Sighișoara</h3>
-        <p class="mt-3 text-text-secondary leading-7">Vibrant, living, and intensely atmospheric. A medieval citadel that pulses with energy.</p>
+        <p class="mt-3 text-text-secondary leading-7">Vibrant, living, and intensely atmospheric. A medieval citadel that pulses with energy. <span style="color:#c4643d">(UNESCO World Heritage)</span></p>
       </div>
       <div class="reveal lux-card p-6">
-        <img class="card-thumb" src="https://img.freepik.com/free-photo/aerial-drone-view-historic-centre-sibiu-evening-romania_1268-20828.jpg?w=1480&t=st=1706103229~exp=1706103829~hmac=a39b67a4d1ced3189f5866b79594e08fc90ead26a9ce1774b11626507b30a97e" alt="Sibiu aerial" onclick="openLightbox(this.src)">
+        <img class="card-thumb" src="images/sibiu_thumb.jpg" alt="Sibiu aerial" onclick="openLightbox(this.src)">
         <div class="mini-label mb-3">Saxon elegance</div>
         <h3 class="font-display text-[1.7rem] leading-tight">Sibiu</h3>
         <p class="mt-3 text-text-secondary leading-7">Refined Transylvanian architecture, spacious squares, and cultural sophistication that captivates.</p>
@@ -223,9 +222,9 @@
             <div class="mt-6 badge">Peleș Castle · scenic drive · Brașov arrival</div>
        </div>
       <div class="reveal image-grid image-grid-3">
-        <img src="https://suruhotel.ro/wp-content/uploads/2022/12/hotel-valea-prahovei.webp" alt="Valea Prahovei" onclick="openLightbox(this.src)">
-        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/c1069b26e243bd9fd4c2cc88c69857ba5ad6af15.jpg" alt="Peles Castle" onclick="openLightbox(this.src)">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Brasov_-_Casa_Sfatului.jpg/1280px-Brasov_-_Casa_Sfatului.jpg" alt="Brasov Council Square" onclick="openLightbox(this.src)">
+        <img src="images/valea-prahovei_day1.jpg" alt="Valea Prahovei" onclick="openLightbox(this.src)">
+        <img src="images/peles_day1.jpg" alt="Peles Castle" onclick="openLightbox(this.src)">
+        <img src="images/brasov_day1.jpg" alt="Brasov Council Square" onclick="openLightbox(this.src)">
       </div>
     </div>
   </div>
@@ -262,8 +261,8 @@
             <div class="mt-6 badge">Brașov exploration · Bran Castle · optional nature</div>
        </div>
       <div class="reveal image-grid image-grid-2">
-        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/88f9c6405ea0b446bb7a954632f202400baa6935.jpg" alt="Brasov aerial" onclick="openLightbox(this.src)">
-        <img src="https://cdn-imgix.headout.com/media/images/cb065839aac5740c5f391eff83ef9fb4-Bran%20Castle%20at%20sunset.jpeg" alt="Bran Castle" onclick="openLightbox(this.src)">
+        <img src="images/brasov_day2.jpg" alt="Brasov aerial" onclick="openLightbox(this.src)">
+        <img src="images/bran_thumb.jpg" alt="Bran Castle" onclick="openLightbox(this.src)">
       </div>
     </div>
   </div>
@@ -281,7 +280,7 @@
        <div class="reveal bg-panel p-10 flex flex-col justify-center min-h-[460px]">
          <div class="page-kicker mb-4">Day 3 · Saturday June 27</div>
          <h2 class="font-display text-[clamp(2.6rem,5vw,4.3rem)] leading-none">Viscri to Sighișoara</h2>
-          <p class="mt-8 text-[1.1rem] leading-8 text-text-secondary">From authentic Saxon village to medieval citadel. Viscri brings real rural texture. Sighișoara brings atmosphere, color, and a true sense of place.</p>
+          <p class="mt-8 text-[1.1rem] leading-8 text-text-secondary">From authentic Saxon village to medieval citadel. Viscri brings real rural texture <span style="color:#c4643d">(UNESCO World Heritage)</span>. Sighișoara brings atmosphere, color, and a true sense of place <span style="color:#c4643d">(UNESCO World Heritage)</span>.</p>
           <p class="mt-5 text-[1.1rem] leading-8 text-text-secondary">Late afternoon in the citadel. Dinner at Joseph Haydn House — an intimate, refined setting within the medieval citadel.</p>
            <div class="mt-6 pt-6 border-t border-text-muted/20 space-y-2">
               <div class="text-[0.82rem] leading-snug">
@@ -297,11 +296,11 @@
                  <div class="text-text-secondary font-medium">Fronius Residence (Sighișoara)</div>
                </div>
             </div>
-            <div class="mt-6 badge">UNESCO village · citadel arrival · evening dining</div>
+            <div class="mt-6 badge">Viscri · citadel arrival · evening dining</div>
        </div>
        <div class="reveal image-grid image-grid-2">
-        <img src="https://turismistoric.ro/wp-content/uploads/2023/12/viscri-1024x875.jpg" alt="Viscri" onclick="openLightbox(this.src)">
-        <img src="https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-6/481905967_686380767047452_4306337197556132403_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=OAg2TSH9j5cQ7kNvwGdhAJ8&_nc_oc=Adqmnrghhy0C_70PFgwB4yeCnNHMx6h-2dAxL7KHOGL_ZQOUCb_vyfNJe08AKFCbzEI&_nc_zt=23&_nc_ht=scontent-lga3-3.xx&_nc_gid=9V7BSvFd_LwT8hKv4rFTjw&_nc_ss=7b2a8&oh=00_Af6R-h4uTjaRPLaRzH2TQkIYP3uGbnMdiuhPtduUiYj6dg&oe=69F9C23B" alt="Sighisoara" onclick="openLightbox(this.src)">
+        <img src="images/viscri_day3.jpg" alt="Viscri" onclick="openLightbox(this.src)">
+        <img src="images/Sighisoara_day3.jpg" alt="Sighisoara" onclick="openLightbox(this.src)">
       </div>
     </div>
   </div>
@@ -319,7 +318,7 @@
        <div class="reveal bg-panel p-10 flex flex-col justify-center min-h-[460px]">
          <div class="page-kicker mb-4">Day 4 · Sunday June 28</div>
          <h2 class="font-display text-[clamp(2.6rem,5vw,4.3rem)] leading-none">Sighișoara to Biertan to Sibiu</h2>
-         <p class="mt-8 text-[1.1rem] leading-8 text-text-secondary">Breakfast in the citadel. Biertan stop: a moment of calm architecture in open Transylvanian landscape.</p>
+          <p class="mt-8 text-[1.1rem] leading-8 text-text-secondary">Breakfast in the citadel. Biertan stop <span style="color:#c4643d">(UNESCO World Heritage)</span>: a moment of calm architecture in open Transylvanian landscape.</p>
          <p class="mt-5 text-[1.1rem] leading-8 text-text-secondary">Arrival in Sibiu shifts the tone to urban refinement, spacious squares, and sophisticated elegance.</p>
           <div class="mt-6 pt-6 border-t border-text-muted/20 space-y-2">
               <div class="text-[0.82rem] leading-snug">
@@ -338,8 +337,8 @@
           <div class="mt-6 badge">Biertan stop · scenic transfer · refined arrival</div>
        </div>
       <div class="reveal image-grid image-grid-2">
-        <img src="https://romaniatourism.com/images/castles-fortresses/biertan-fortress-fortified-church-onisor.jpg" alt="Biertan panorama" onclick="openLightbox(this.src)">
-        <img src="https://img.freepik.com/free-photo/aerial-drone-view-historic-centre-sibiu-evening-romania_1268-20828.jpg?w=1480&t=st=1706103229~exp=1706103829~hmac=a39b67a4d1ced3189f5866b79594e08fc90ead26a9ce1774b11626507b30a97e" alt="Sibiu aerial" onclick="openLightbox(this.src)">
+        <img src="images/biertan_day4.jpg" alt="Biertan panorama" onclick="openLightbox(this.src)">
+        <img src="images/sibiu_thumb.jpg" alt="Sibiu aerial" onclick="openLightbox(this.src)">
       </div>
     </div>
   </div>
@@ -356,9 +355,9 @@
     <div class="itinerary-grid">
        <div class="reveal bg-panel p-10 flex flex-col justify-center min-h-[460px]">
          <div class="page-kicker mb-4">Day 5 · Monday June 29</div>
-         <h2 class="font-display text-[clamp(2.6rem,5vw,4.3rem)] leading-none">Sibiu or Corvin Castle</h2>
-          <p class="mt-8 text-[1.1rem] leading-8 text-text-secondary">Option A: A relaxed day in Sibiu — culture, terraces, and no pressure.</p>
-          <p class="mt-5 text-[1.1rem] leading-8 text-text-secondary">Option B: Corvin Castle — a final, dramatic Gothic highlight.</p>
+          <h2 class="font-display text-[clamp(2.6rem,5vw,4.3rem)] leading-none">Sibiu & Corvin Castle</h2>
+           <p class="mt-8 text-[1.1rem] leading-8 text-text-secondary">A relaxed morning in Sibiu — culture, terraces, and no pressure. Then Corvin Castle in the afternoon for a final, dramatic Gothic highlight.</p>
+
           <div class="mt-6 pt-6 border-t border-text-muted/20 space-y-2">
               <div class="text-[0.82rem] leading-snug">
                 <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Lunch</div>
@@ -373,11 +372,11 @@
                 <div class="text-text-secondary font-medium">Noblesse Boutique (Sibiu)</div>
               </div>
           </div>
-          <div class="mt-6 badge">City day or castle detour · your choice</div>
+          <div class="mt-6 badge">Sibiu morning & Corvin Castle · best of both</div>
        </div>
       <div class="reveal image-grid image-grid-2">
-        <img src="https://img.freepik.com/free-photo/aerial-drone-view-historic-centre-sibiu-evening-romania_1268-20828.jpg?w=1480&t=st=1706103229~exp=1706103829~hmac=a39b67a4d1ced3189f5866b79594e08fc90ead26a9ce1774b11626507b30a97e" alt="Sibiu aerial" onclick="openLightbox(this.src)">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Hunedoara_castle.jpg" alt="Corvin Castle" onclick="openLightbox(this.src)">
+        <img src="images/sibiu_day5.jpg" alt="Sibiu aerial" onclick="openLightbox(this.src)">
+        <img src="images/hunedoara_castle_day5.jpg" alt="Corvin Castle" onclick="openLightbox(this.src)">
       </div>
     </div>
   </div>
@@ -386,7 +385,7 @@
 
 <!-- DAY 6 - THE FINALE -->
 <div class="slide" data-slide="9">
-  <img class="full-image" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/f47b763a6ebb9b3078b69bed6a6ea3e24cc075a3.jpg" alt="Transfagarasan road">
+  <img class="full-image" src="images/transfagarasan.jpg" alt="Transfagarasan road">
   <div class="image-overlay" style="background:linear-gradient(90deg, rgba(8,7,5,.74) 0%, rgba(8,7,5,.32) 50%, rgba(8,7,5,.75) 100%)"></div>
   <div class="gradient-mesh">
     <div class="blob" style="width:350px;height:350px;top:-120px;left:-90px;background:var(--color-accent-1);opacity:.13"></div>
@@ -448,9 +447,67 @@
    <div class="page-num">09</div>
 </div>
 
-<!-- CLOSING -->
+<!-- ADDITIONAL EXPERIENCES -->
 <div class="slide" data-slide="11">
-  <img class="full-image" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/571479614a04fef8ce09d5a782d12cac1815f78a.jpg" alt="Sibiu closing">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:260px;height:260px;top:8%;right:6%;background:var(--color-accent-1);opacity:.08"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-80px;left:-60px;background:var(--color-accent-3);opacity:.08"></div>
+    <div class="blob" style="width:180px;height:180px;top:42%;left:18%;background:var(--color-accent-2);opacity:.07"></div>
+  </div>
+  <div class="content">
+    <div class="reveal page-kicker mb-8">Optional stops to tailor the journey</div>
+    <h2 class="reveal font-display text-[clamp(2.5rem,5vw,4.2rem)] leading-none mb-14">Additional Experiences</h2>
+    <div class="grid grid-cols-3 gap-6">
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="images/sinaia_monastery_thumb.jpg" alt="Sinaia Monastery" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">Cultural pause</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Sinaia Monastery</h3>
+        <p class="mt-3 text-text-secondary leading-7">Elegant monastery just steps from Peleș, easy cultural stop.</p>
+      </div>
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="images/sinaia_casino_thumb.jpg" alt="Sinaia Casino" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">Belle Époque</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Sinaia Casino</h3>
+        <p class="mt-3 text-text-secondary leading-7">Belle Époque landmark, perfect short architectural stop.</p>
+      </div>
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="images/rupea_thumb.jpg" alt="Rupea Fortress" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">On the route</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Rupea Fortress</h3>
+        <p class="mt-3 text-text-secondary leading-7">Hilltop fortress directly on the route, quick panoramic stop.</p>
+      </div>
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="images/alba_iulia_thumb.jpg" alt="Alba Iulia Citadel" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">Grand fortress</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Alba Iulia Citadel</h3>
+        <p class="mt-3 text-text-secondary leading-7">Grand restored fortress, historic and visually impressive.</p>
+      </div>
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="images/curtea_arges_thumb.jpg" alt="Curtea de Arges Monastery" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">Final stop</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Curtea de Argeș Monastery</h3>
+        <p class="mt-3 text-text-secondary leading-7">Refined final cultural stop on the way back to Bucharest.</p>
+      </div>
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="images/wine_experiences_thumb.jpg" alt="Wine Experiences" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">Boutique tasting</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Transylvanian Wine Experiences</h3>
+        <p class="mt-3 text-text-secondary leading-7">Boutique vineyards, refined tastings, and countryside rhythm.</p>
+        <div class="mt-4 pt-4 border-t border-text-muted/20 space-y-2">
+          <div class="text-[0.82rem] leading-snug text-text-secondary">Villa Vinea Vineyard — Scenic vineyard with refined Transylvanian wines</div>
+          <div class="text-[0.82rem] leading-snug text-text-secondary">Villa Vinea Vinothek — Wine bar in Sighișoara citadel, zero detour</div>
+          <div class="text-[0.82rem] leading-snug text-text-secondary">Apoldium Winery — Boutique vineyard near Sibiu, intimate tastings</div>
+          <div class="text-[0.82rem] leading-snug text-text-secondary">Bethlen-Haller Castle + Jidvei — Castle estate, vineyard lunch, and curated tasting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">10</div>
+</div>
+
+<!-- CLOSING -->
+<div class="slide" data-slide="12">
+  <img class="full-image" src="images/last_page.jpeg" alt="Sibiu closing">
   <div class="image-overlay" style="background:linear-gradient(180deg, rgba(7,6,5,.32) 0%, rgba(7,6,5,.66) 58%, rgba(7,6,5,.84) 100%)"></div>
   <div class="gradient-mesh">
   </div>
@@ -479,7 +536,7 @@
   <button class="nav-btn" onclick="changeSlide(-1)">&#8249;</button>
   <div class="slide-dots" id="dots"></div>
   <button class="nav-btn" onclick="changeSlide(1)">&#8250;</button>
-   <span class="slide-counter" id="counter">1 / 11</span>
+   <span class="slide-counter" id="counter">1 / 12</span>
 </div>
 
 <script>
