@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="slides-format" content="viewport">
+  <title>Romania: A Private Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-bg: #0d0c0a;
+      --color-bg-deep: #080706;
+      --color-surface: #1c1814;
+      --color-text: #f7f2eb;
+      --color-text-secondary: #dccfbe;
+      --color-text-muted: #bba488;
+      --color-accent-1: #d6b17c;
+      --color-accent-2: #efe2cf;
+      --color-accent-3: #7b8a62;
+      --color-glass-bg: rgba(255,255,255,0.08);
+      --color-glass-border: rgba(255,255,255,0.14);
+      --color-vignette: rgba(0,0,0,0.50);
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+  </style>
+  <style>
+    :root { --color-bg: #0d0c0a; --color-text: #f7f2eb; --glow-color-rgb: 214,177,124; }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;background:var(--color-bg)}
+    body{font-family:var(--font-body);color:var(--color-text);overflow:hidden;height:100vh;width:100vw}
+    .deck{width:100vw;height:100vh;position:relative}
+    .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.96);transition:opacity .7s ease,transform .7s ease;pointer-events:none;overflow:hidden;background:var(--color-bg)}
+    .slide.active{opacity:1;transform:scale(1);pointer-events:auto}
+    .slide>.content{position:relative;z-index:2;width:100%;max-width:1220px;padding:clamp(1.5rem,4vw,4rem)}
+    .reveal{opacity:0;transform:translateY(20px)}
+    .nav-controls{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:16px;align-items:center;z-index:100;background:rgba(10,10,10,.35);backdrop-filter:blur(14px);padding:10px 24px;border-radius:40px;border:1px solid var(--color-glass-border)}
+    .nav-btn{width:40px;height:40px;border:none;border-radius:50%;background:var(--color-glass-bg);color:var(--color-accent-1);font-size:1.2rem;cursor:pointer}
+    .slide-dots{display:flex;gap:8px}.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer}.dot.active{background:var(--color-accent-1);transform:scale(1.3)}
+    .slide-counter{font-size:.8rem;color:var(--color-text-muted);min-width:52px;text-align:center}
+    .gradient-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+    .blob{position:absolute;border-radius:50%;filter:blur(80px);animation:float-slow 14s ease-in-out infinite}.blob:nth-child(2){animation:float-drift 18s ease-in-out infinite}.blob:nth-child(3){animation:float-slow 22s ease-in-out infinite reverse}
+    @keyframes float-slow{0%{transform:translate(0,0) scale(1)}25%{transform:translate(60px,-40px) scale(1.1)}50%{transform:translate(-40px,45px) scale(.92)}75%{transform:translate(42px,18px) scale(1.06)}100%{transform:translate(0,0) scale(1)}}
+    @keyframes float-drift{0%{transform:translate(0,0) scale(1)}33%{transform:translate(-50px,-50px) scale(1.12)}66%{transform:translate(40px,24px) scale(.9)}100%{transform:translate(0,0) scale(1)}}
+    @keyframes kenburns{0%{transform:scale(1.04)}100%{transform:scale(1.12) translate(-1%,-1%)}}
+    .slide::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");background-size:256px 256px;opacity:.03;mix-blend-mode:overlay}
+    .slide::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 45%,var(--color-vignette) 100%)}
+    .hero-image,.full-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .hero-image{animation:kenburns 18s ease-in-out infinite alternate}
+    .image-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.44) 45%,rgba(0,0,0,.76) 100%)}
+    .lux-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(16px);border-radius:24px;box-shadow:0 20px 50px rgba(0,0,0,.22)}
+    .bg-panel{background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px);border-radius:28px}
+    .mini-label{letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;color:var(--color-text-muted)}
+    .page-kicker{letter-spacing:.35em;text-transform:uppercase;font-size:.74rem;color:var(--color-accent-2)}
+    .badge{display:inline-flex;padding:.45rem .8rem;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);color:var(--color-accent-2);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase}
+     .page-num{position:absolute;right:42px;bottom:34px;z-index:3;font-size:.76rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+     a{color:var(--color-accent-1);text-decoration:none;transition:opacity .3s ease}
+     a:hover{opacity:.8}
+    .split-grid,.itinerary-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:stretch}
+    .hotel-grid,.dining-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.15rem}
+    .appendix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .image-grid{display:grid;gap:8px;height:100%;min-height:420px;border-radius:24px;overflow:hidden}
+    .image-grid-2{grid-template-rows:1fr 1fr}
+    .image-grid-3{grid-template-columns:1fr 1fr;grid-template-rows:1.2fr 1fr}
+    .image-grid-3 img:first-child{grid-column:1/-1}
+    .image-grid img{width:100%;height:100%;object-fit:cover;cursor:pointer;transition:transform .35s ease}
+    .card-thumb{width:100%;height:130px;object-fit:cover;border-radius:14px;cursor:pointer;margin-bottom:.5rem;transition:transform .3s ease}
+    .card-thumb:hover{transform:scale(1.03)}
+    .image-grid img:hover{transform:scale(1.03)}
+    .lightbox{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s ease}
+    .lightbox.open{opacity:1;pointer-events:auto}
+    .lightbox img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:10px}
+    .lightbox .lb-close{position:absolute;top:22px;right:28px;width:46px;height:46px;border:none;background:rgba(255,255,255,.12);color:#fff;font-size:1.8rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;z-index:1000}
+    .lightbox .lb-close:hover{background:rgba(255,255,255,.22)}
+    .particle-canvas,.particle-canvas-ambient{position:absolute;inset:0;z-index:1}
+    .deco-line{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--color-accent-1),transparent)}
+    @media (max-width:980px){.split-grid,.itinerary-grid,.hotel-grid,.dining-grid,.appendix-grid{grid-template-columns:1fr}}
+    @media (max-width:768px){
+      .grid-cols-3{grid-template-columns:repeat(2,1fr)}
+      .slide>.content{padding:clamp(1rem,3vw,2rem)}
+    }
+    @media (max-width:640px){
+      .grid-cols-3,.grid-cols-2,.hotel-grid{grid-template-columns:1fr}
+      .slide>.content{padding:clamp(0.75rem,2.5vw,1.25rem)}
+      .bg-panel{min-height:auto!important;padding:1.25rem!important;border-radius:20px}
+      .itinerary-grid{gap:1rem}
+      .image-grid{min-height:200px;border-radius:16px}
+      .image-grid-3{grid-template-rows:1fr 1fr}
+      .nav-controls{padding:8px 16px;gap:10px;bottom:16px}
+      .nav-btn{width:34px;height:34px;font-size:1rem}
+      .slide-dots{gap:6px}
+      .dot{width:8px;height:8px}
+      .page-num{right:16px;bottom:68px;font-size:.65rem}
+      .lux-card{padding:1.25rem!important;border-radius:18px}
+      .badge{font-size:.65rem;padding:.35rem .6rem}
+      .mini-label{font-size:.65rem}
+      h2.font-display{font-size:clamp(1.8rem,7vw,2.6rem)!important}
+      p{font-size:.9rem!important;line-height:1.6!important}
+      .card-thumb{height:100px}
+      .grid.gap-6{gap:1rem}
+    }
+  </style>
+</head>
+<body>
+<div class="mouse-spotlight" style="position:fixed;inset:0;z-index:99;pointer-events:none"></div>
+<div class="deck">
+
+<!-- COVER PAGE -->
+<div class="slide active" data-slide="1">
+  <img class="hero-image" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Castelul_Peles%2C_Sinaia_-_Vedere_panoramica.jpg" alt="Peles Castle panoramic">
+  <div class="image-overlay"></div>
+  <div class="gradient-mesh"></div>
+  <div class="content text-center max-w-[1000px]">
+    <div class="reveal mini-label mb-5">Private itinerary · 3 couples · June 25 – July 1, 2026</div>
+    <h1 class="reveal font-display text-[clamp(3.4rem,8vw,6.2rem)] font-semibold leading-[0.95] tracking-tight">Romania: A Private Journey</h1>
+    <p class="reveal mt-5 text-[clamp(1rem,2vw,1.35rem)] text-text-secondary tracking-[0.28em] uppercase">Transylvania Experience</p>
+    <div class="reveal mt-10 flex justify-center"><div class="deco-line"></div></div>
+  </div>
+  <div class="page-num">Cover</div>
+</div>
+
+<!-- WHY ROMANIA -->
+<div class="slide" data-slide="2">
+  <img class="full-image" src="https://cdn.website-editor.net/d32a6d22b5134843a6dbfa52b47c4e8c/dms3rep/multi/transfagarasan_meilleure_route_monde_carpates_blog_agence_voyage_roumanie.jpg" alt="Transfagarasan aerial">
+  <div class="image-overlay" style="background:linear-gradient(90deg, rgba(8,7,5,.78) 0%, rgba(8,7,5,.48) 45%, rgba(8,7,5,.70) 100%)"></div>
+  <div class="gradient-mesh"><div class="blob" style="width:380px;height:380px;top:-120px;left:-80px;background:var(--color-accent-1);opacity:.12"></div><div class="blob" style="width:260px;height:260px;bottom:-70px;right:-40px;background:var(--color-accent-3);opacity:.10"></div></div>
+  <div class="content">
+    <div class="split-grid">
+      <div>
+        <div class="reveal page-kicker mb-8">Why Romania</div>
+        <h2 class="reveal font-display text-[clamp(2.7rem,5vw,4.7rem)] leading-[0.95] max-w-[640px]">Europe before the crowds</h2>
+        <p class="reveal mt-10 text-[1.13rem] leading-9 max-w-[590px] text-text-secondary">Castles that take your breath. Roads that wind through forests and alpine passes. Medieval towns where real people still live, not just visit.</p>
+         <p class="reveal mt-6 text-[1.08rem] leading-8 max-w-[590px] text-text-muted">True luxury here isn't excess. It's access, rhythm, real culture, and the rare feeling of discovery.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">01</div>
+</div>
+
+<!-- HIGHLIGHTS -->
+<div class="slide" data-slide="3">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:260px;height:260px;top:8%;right:6%;background:var(--color-accent-1);opacity:.08"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-80px;left:-60px;background:var(--color-accent-3);opacity:.08"></div>
+    <div class="blob" style="width:180px;height:180px;top:42%;left:18%;background:var(--color-accent-2);opacity:.07"></div>
+  </div>
+
+  <div class="content">
+    <div class="reveal page-kicker mb-8">Signature Experiences</div>
+    <h2 class="reveal font-display text-[clamp(2.5rem,5vw,4.2rem)] leading-none mb-14">Journey highlights</h2>
+    <div class="grid grid-cols-3 gap-6">
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/c1069b26e243bd9fd4c2cc88c69857ba5ad6af15.jpg" alt="Peles Castle" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">Royal grandeur</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Peleș Castle</h3>
+        <p class="mt-3 text-text-secondary leading-7">Imperial architecture in the heart of the Carpathians. Opulent interiors and a mountain view that captures your soul.</p>
+      </div>
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="https://cdn-imgix.headout.com/media/images/cb065839aac5740c5f391eff83ef9fb4-Bran%20Castle%20at%20sunset.jpeg" alt="Bran Castle" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">Legend & myth</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Bran Castle</h3>
+        <p class="mt-3 text-text-secondary leading-7">Dramatic, gothic, and full of stories. A fortress best understood over wine than any guidebook.</p>
+      </div>
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="https://www.turistulliber.ro/wp-content/uploads/2022/11/Piata-Sfatului-Brasov-1536x864.jpg" alt="Brasov Council Square" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">Medieval rhythm</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Brașov</h3>
+        <p class="mt-3 text-text-secondary leading-7">Elegant squares, cobblestone streets, and an urban pace that never rushes.</p>
+      </div>
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="https://turismistoric.ro/wp-content/uploads/2023/12/viscri-1024x875.jpg" alt="Viscri" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">Village authenticity</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Viscri</h3>
+        <p class="mt-3 text-text-secondary leading-7">A UNESCO village where traditions feel natural, not performed. Century-old houses and Saxon heritage.</p>
+      </div>
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-6/481905967_686380767047452_4306337197556132403_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=OAg2TSH9j5cQ7kNvwGdhAJ8&_nc_oc=Adqmnrghhy0C_70PFgwB4yeCnNHMx6h-2dAxL7KHOGL_ZQOUCb_vyfNJe08AKFCbzEI&_nc_zt=23&_nc_ht=scontent-lga3-3.xx&_nc_gid=9V7BSvFd_LwT8hKv4rFTjw&_nc_ss=7b2a8&oh=00_Af6R-h4uTjaRPLaRzH2TQkIYP3uGbnMdiuhPtduUiYj6dg&oe=69F9C23B" alt="Sighisoara" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">Citadel color</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Sighișoara</h3>
+        <p class="mt-3 text-text-secondary leading-7">Vibrant, living, and intensely atmospheric. A medieval citadel that pulses with energy.</p>
+      </div>
+      <div class="reveal lux-card p-6">
+        <img class="card-thumb" src="https://img.freepik.com/free-photo/aerial-drone-view-historic-centre-sibiu-evening-romania_1268-20828.jpg?w=1480&t=st=1706103229~exp=1706103829~hmac=a39b67a4d1ced3189f5866b79594e08fc90ead26a9ce1774b11626507b30a97e" alt="Sibiu aerial" onclick="openLightbox(this.src)">
+        <div class="mini-label mb-3">Saxon elegance</div>
+        <h3 class="font-display text-[1.7rem] leading-tight">Sibiu</h3>
+        <p class="mt-3 text-text-secondary leading-7">Refined Transylvanian architecture, spacious squares, and cultural sophistication that captivates.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">02</div>
+</div>
+
+<!-- DAY 1 -->
+<div class="slide" data-slide="4">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:260px;height:260px;top:8%;right:5%;background:var(--color-accent-1);opacity:.07"></div>
+    <div class="blob" style="width:220px;height:220px;bottom:-50px;left:-40px;background:var(--color-accent-2);opacity:.06"></div>
+  </div>
+  <div class="content">
+    <div class="itinerary-grid">
+       <div class="reveal bg-panel p-10 flex flex-col justify-center min-h-[460px]">
+         <div class="page-kicker mb-4">Day 1 · Thursday June 25</div>
+         <h2 class="font-display text-[clamp(2.6rem,5vw,4.3rem)] leading-none">Bucharest to Sinaia to Brașov</h2>
+         <p class="mt-8 text-[1.1rem] leading-8 text-text-secondary">Early morning departure from Bucharest. Peleș Castle awaits in Sinaia—royal grandeur nestled in alpine beauty.</p>
+          <p class="mt-5 text-[1.1rem] leading-8 text-text-secondary">Scenic mountain drive to Brașov. Arrival in Old Town. Dinner at Dei Frati. A confident, elegant start.</p>
+           <div class="mt-6 pt-6 border-t border-text-muted/20 space-y-2">
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Lunch</div>
+                <div class="text-text-secondary font-medium"><a href="https://www.google.com/maps/search/Kuib+Sinaia" target="_blank" class="hover:text-accent-1 transition-colors">Kuib (Sinaia)</a> — Light seasonal lunch, perfect reset after arrival</div>
+              </div>
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Dinner</div>
+                <div class="text-text-secondary font-medium"><a href="https://www.google.com/maps/search/Dei+Frati+Brasov" target="_blank" class="hover:text-accent-1 transition-colors">Dei Frati (Brașov)</a> — Elegant first dinner, one of Brașov's best tables</div>
+              </div>
+               <div class="text-[0.82rem] leading-snug">
+                 <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Stay</div>
+                 <div class="text-text-secondary font-medium">Radisson Blu Aurum (Brașov)</div>
+               </div>
+            </div>
+            <div class="mt-6 badge">Peleș Castle · scenic drive · Brașov arrival</div>
+       </div>
+      <div class="reveal image-grid image-grid-3">
+        <img src="https://suruhotel.ro/wp-content/uploads/2022/12/hotel-valea-prahovei.webp" alt="Valea Prahovei" onclick="openLightbox(this.src)">
+        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/c1069b26e243bd9fd4c2cc88c69857ba5ad6af15.jpg" alt="Peles Castle" onclick="openLightbox(this.src)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Brasov_-_Casa_Sfatului.jpg/1280px-Brasov_-_Casa_Sfatului.jpg" alt="Brasov Council Square" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+  </div>
+  <div class="page-num">03</div>
+</div>
+
+<!-- DAY 2 -->
+<div class="slide" data-slide="5">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:360px;height:360px;top:-120px;left:-80px;background:var(--color-accent-3);opacity:.08"></div>
+    <div class="blob" style="width:220px;height:220px;bottom:-60px;right:-20px;background:var(--color-accent-1);opacity:.08"></div>
+  </div>
+  <div class="content">
+    <div class="itinerary-grid">
+       <div class="reveal bg-panel p-10 flex flex-col justify-center min-h-[460px]">
+         <div class="page-kicker mb-4">Day 2 · Friday June 26</div>
+         <h2 class="font-display text-[clamp(2.6rem,5vw,4.3rem)] leading-none">Brașov & Bran</h2>
+         <p class="mt-8 text-[1.1rem] leading-8 text-text-secondary">Morning exploring Brașov: medieval squares, hidden cafés, and pedestrian streets without pressure.</p>
+          <p class="mt-5 text-[1.1rem] leading-8 text-text-secondary">Afternoon: Bran Castle visit. Optional Bear Sanctuary for those who want a nature counterpoint. Return to Brașov for a relaxed, unhurried evening.</p>
+           <div class="mt-6 pt-6 border-t border-text-muted/20 space-y-2">
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Lunch</div>
+                <div class="text-text-secondary font-medium"><a href="https://www.google.com/maps/search/Sub+Tampa+Brasov" target="_blank" class="hover:text-accent-1 transition-colors">Sub Tâmpa (Brașov)</a> — Relaxed lunch with panoramic views</div>
+               </div>
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Dinner</div>
+                <div class="text-text-secondary font-medium"><a href="https://www.google.com/maps/search/Bistro+de+l'Arte+Brasov" target="_blank" class="hover:text-accent-1 transition-colors">Bistro de l'Arte (Brașov)</a> — Intimate evening with artistic local feel</div>
+              </div>
+               <div class="text-[0.82rem] leading-snug">
+                 <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Stay</div>
+                 <div class="text-text-secondary font-medium">Radisson Blu Aurum (Brașov)</div>
+               </div>
+            </div>
+            <div class="mt-6 badge">Brașov exploration · Bran Castle · optional nature</div>
+       </div>
+      <div class="reveal image-grid image-grid-2">
+        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/88f9c6405ea0b446bb7a954632f202400baa6935.jpg" alt="Brasov aerial" onclick="openLightbox(this.src)">
+        <img src="https://cdn-imgix.headout.com/media/images/cb065839aac5740c5f391eff83ef9fb4-Bran%20Castle%20at%20sunset.jpeg" alt="Bran Castle" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+  </div>
+  <div class="page-num">04</div>
+</div>
+
+<!-- DAY 3 -->
+<div class="slide" data-slide="6">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:240px;height:240px;top:6%;right:4%;background:var(--color-accent-2);opacity:.07"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-70px;left:-40px;background:var(--color-accent-3);opacity:.08"></div>
+  </div>
+  <div class="content">
+    <div class="itinerary-grid">
+       <div class="reveal bg-panel p-10 flex flex-col justify-center min-h-[460px]">
+         <div class="page-kicker mb-4">Day 3 · Saturday June 27</div>
+         <h2 class="font-display text-[clamp(2.6rem,5vw,4.3rem)] leading-none">Viscri to Sighișoara</h2>
+          <p class="mt-8 text-[1.1rem] leading-8 text-text-secondary">From authentic Saxon village to medieval citadel. Viscri brings real rural texture. Sighișoara brings atmosphere, color, and a true sense of place.</p>
+          <p class="mt-5 text-[1.1rem] leading-8 text-text-secondary">Late afternoon in the citadel. Dinner at Joseph Haydn House — an intimate, refined setting within the medieval citadel.</p>
+           <div class="mt-6 pt-6 border-t border-text-muted/20 space-y-2">
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Lunch</div>
+                <div class="text-text-secondary font-medium"><a href="https://www.google.com/maps/search/Viscri+guesthouse+restaurant" target="_blank" class="hover:text-accent-1 transition-colors">Rural guesthouse (Viscri)</a> — Traditional village lunch, authentic and local</div>
+              </div>
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Dinner</div>
+                <div class="text-text-secondary font-medium"><a href="https://www.google.com/maps/search/Joseph+Haydn+House+Sighisoara" target="_blank" class="hover:text-accent-1 transition-colors">Joseph Haydn House (Sighișoara)</a> — Intimate dinner within the medieval citadel</div>
+              </div>
+               <div class="text-[0.82rem] leading-snug">
+                 <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Stay</div>
+                 <div class="text-text-secondary font-medium">Fronius Residence (Sighișoara)</div>
+               </div>
+            </div>
+            <div class="mt-6 badge">UNESCO village · citadel arrival · evening dining</div>
+       </div>
+       <div class="reveal image-grid image-grid-2">
+        <img src="https://turismistoric.ro/wp-content/uploads/2023/12/viscri-1024x875.jpg" alt="Viscri" onclick="openLightbox(this.src)">
+        <img src="https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-6/481905967_686380767047452_4306337197556132403_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=OAg2TSH9j5cQ7kNvwGdhAJ8&_nc_oc=Adqmnrghhy0C_70PFgwB4yeCnNHMx6h-2dAxL7KHOGL_ZQOUCb_vyfNJe08AKFCbzEI&_nc_zt=23&_nc_ht=scontent-lga3-3.xx&_nc_gid=9V7BSvFd_LwT8hKv4rFTjw&_nc_ss=7b2a8&oh=00_Af6R-h4uTjaRPLaRzH2TQkIYP3uGbnMdiuhPtduUiYj6dg&oe=69F9C23B" alt="Sighisoara" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+  </div>
+  <div class="page-num">05</div>
+</div>
+
+<!-- DAY 4 -->
+<div class="slide" data-slide="7">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:350px;height:350px;top:-100px;left:-80px;background:var(--color-accent-1);opacity:.09"></div>
+    <div class="blob" style="width:220px;height:220px;bottom:-50px;right:-30px;background:var(--color-accent-2);opacity:.07"></div>
+  </div>
+  <div class="content">
+    <div class="itinerary-grid">
+       <div class="reveal bg-panel p-10 flex flex-col justify-center min-h-[460px]">
+         <div class="page-kicker mb-4">Day 4 · Sunday June 28</div>
+         <h2 class="font-display text-[clamp(2.6rem,5vw,4.3rem)] leading-none">Sighișoara to Biertan to Sibiu</h2>
+         <p class="mt-8 text-[1.1rem] leading-8 text-text-secondary">Breakfast in the citadel. Biertan stop: a moment of calm architecture in open Transylvanian landscape.</p>
+         <p class="mt-5 text-[1.1rem] leading-8 text-text-secondary">Arrival in Sibiu shifts the tone to urban refinement, spacious squares, and sophisticated elegance.</p>
+          <div class="mt-6 pt-6 border-t border-text-muted/20 space-y-2">
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Lunch</div>
+                <div class="text-text-secondary font-medium"><a href="https://www.google.com/maps/search/Casa+Terra+Sibiu" target="_blank" class="hover:text-accent-1 transition-colors">Casa Terra (Biertan area)</a> — Countryside lunch, simple and local</div>
+              </div>
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Dinner</div>
+                <div class="text-text-secondary font-medium"><a href="https://www.google.com/maps/search/Kombinat+Gastro-Brewery+Sibiu" target="_blank" class="hover:text-accent-1 transition-colors">Kombinat (Sibiu)</a> — Contemporary, lively modern contrast</div>
+              </div>
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Stay</div>
+                <div class="text-text-secondary font-medium">Noblesse Boutique (Sibiu)</div>
+              </div>
+          </div>
+          <div class="mt-6 badge">Biertan stop · scenic transfer · refined arrival</div>
+       </div>
+      <div class="reveal image-grid image-grid-2">
+        <img src="https://romaniatourism.com/images/castles-fortresses/biertan-fortress-fortified-church-onisor.jpg" alt="Biertan panorama" onclick="openLightbox(this.src)">
+        <img src="https://img.freepik.com/free-photo/aerial-drone-view-historic-centre-sibiu-evening-romania_1268-20828.jpg?w=1480&t=st=1706103229~exp=1706103829~hmac=a39b67a4d1ced3189f5866b79594e08fc90ead26a9ce1774b11626507b30a97e" alt="Sibiu aerial" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+  </div>
+  <div class="page-num">06</div>
+</div>
+
+<!-- DAY 5 -->
+<div class="slide" data-slide="8">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:260px;height:260px;top:10%;right:6%;background:var(--color-accent-3);opacity:.07"></div>
+    <div class="blob" style="width:250px;height:250px;bottom:-70px;left:-40px;background:var(--color-accent-1);opacity:.08"></div>
+  </div>
+  <div class="content">
+    <div class="itinerary-grid">
+       <div class="reveal bg-panel p-10 flex flex-col justify-center min-h-[460px]">
+         <div class="page-kicker mb-4">Day 5 · Monday June 29</div>
+         <h2 class="font-display text-[clamp(2.6rem,5vw,4.3rem)] leading-none">Sibiu or Corvin Castle</h2>
+          <p class="mt-8 text-[1.1rem] leading-8 text-text-secondary">Option A: A relaxed day in Sibiu — culture, terraces, and no pressure.</p>
+          <p class="mt-5 text-[1.1rem] leading-8 text-text-secondary">Option B: Corvin Castle — a final, dramatic Gothic highlight.</p>
+          <div class="mt-6 pt-6 border-t border-text-muted/20 space-y-2">
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Lunch</div>
+                <div class="text-text-secondary font-medium"><a href="https://www.google.com/maps/search/Lumina+Restaurant+Wine+Bar+Sibiu" target="_blank" class="hover:text-accent-1 transition-colors">Lumina (Sibiu)</a> — Polished, central, relaxed lunch</div>
+              </div>
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Dinner</div>
+                <div class="text-text-secondary font-medium"><a href="https://www.google.com/maps/search/Kulinarium+Sibiu" target="_blank" class="hover:text-accent-1 transition-colors">Kulinarium (Sibiu)</a> — Refined final dinner, quiet closing moment</div>
+              </div>
+              <div class="text-[0.82rem] leading-snug">
+                <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Stay</div>
+                <div class="text-text-secondary font-medium">Noblesse Boutique (Sibiu)</div>
+              </div>
+          </div>
+          <div class="mt-6 badge">City day or castle detour · your choice</div>
+       </div>
+      <div class="reveal image-grid image-grid-2">
+        <img src="https://img.freepik.com/free-photo/aerial-drone-view-historic-centre-sibiu-evening-romania_1268-20828.jpg?w=1480&t=st=1706103229~exp=1706103829~hmac=a39b67a4d1ced3189f5866b79594e08fc90ead26a9ce1774b11626507b30a97e" alt="Sibiu aerial" onclick="openLightbox(this.src)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Hunedoara_castle.jpg" alt="Corvin Castle" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+  </div>
+  <div class="page-num">07</div>
+</div>
+
+<!-- DAY 6 - THE FINALE -->
+<div class="slide" data-slide="9">
+  <img class="full-image" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/f47b763a6ebb9b3078b69bed6a6ea3e24cc075a3.jpg" alt="Transfagarasan road">
+  <div class="image-overlay" style="background:linear-gradient(90deg, rgba(8,7,5,.74) 0%, rgba(8,7,5,.32) 50%, rgba(8,7,5,.75) 100%)"></div>
+  <div class="gradient-mesh">
+    <div class="blob" style="width:350px;height:350px;top:-120px;left:-90px;background:var(--color-accent-1);opacity:.13"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-60px;right:-40px;background:var(--color-accent-3);opacity:.10"></div>
+  </div>
+  <div class="content max-w-[1120px]">
+    <div class="reveal page-kicker mb-4">Day 6 · Tuesday June 30</div>
+    <h2 class="reveal font-display text-[clamp(3rem,6vw,5.3rem)] leading-[0.95] max-w-[760px]">Transfăgărășan to Bucharest</h2>
+    <p class="reveal mt-8 text-[1.12rem] leading-8 max-w-[620px] text-text-secondary">The final full day follows Romania's most spectacular road. Altitude, wide curves, viewpoints, and a slow descent back to Bucharest.</p>
+     <p class="reveal mt-5 text-[1.12rem] leading-8 max-w-[620px] text-text-secondary">Final night near the airport — calm, effortless, and ready for a smooth departure the next morning.</p>
+     <div class="reveal mt-6 pt-6 border-t border-text-muted/20 space-y-2">
+        <div class="text-[0.82rem] leading-snug">
+          <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Lunch</div>
+          <div class="text-text-secondary font-medium"><a href="https://www.google.com/maps/search/Balea+Lac+restaurant+Transfagarasan" target="_blank" class="hover:text-accent-1 transition-colors">Bâlea Lac</a> — Scenic mountain lunch with alpine views</div>
+        </div>
+        <div class="text-[0.82rem] leading-snug">
+          <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Dinner</div>
+          <div class="text-text-secondary font-medium">
+            <a href="https://www.google.com/maps/search/Posada+Vidraru" target="_blank" class="hover:text-accent-1 transition-colors">
+              Posada Vidraru (near Vidraru Dam)
+            </a>
+            — Scenic lakeside dinner, quiet and atmospheric
+          </div>
+        </div>
+        <div class="text-[0.82rem] leading-snug">
+          <div class="text-text-muted uppercase tracking-wide text-[0.72rem] mb-1">Stay</div>
+          <div class="text-text-secondary font-medium">Hilton Garden Inn (Otopeni)</div>
+        </div>
+     </div>
+     <div class="reveal mt-9 badge">Scenic finale · mountain pass · flexible departure</div>
+  </div>
+  <div class="page-num">08</div>
+</div>
+
+
+<!-- TRANSPORT -->
+<div class="slide" data-slide="10">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:260px;height:260px;top:10%;right:6%;background:var(--color-accent-1);opacity:.08"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-60px;left:-40px;background:var(--color-accent-2);opacity:.08"></div>
+  </div>
+  <div class="content">
+    <div class="reveal page-kicker mb-8">Seamless Movement</div>
+    <h2 class="reveal font-display text-[clamp(2.5rem,5vw,4.2rem)] mb-12">How you travel</h2>
+    <div class="grid grid-cols-2 gap-6">
+      <div class="reveal lux-card p-8">
+        <h3 class="font-display text-[1.75rem]">Option 1: Private Van & Driver</h3>
+        <p class="mt-5 text-text-secondary leading-7">The most seamless and relaxed way to experience the journey. No driving, no parking stress, and no compromise on comfort.</p>
+        <p class="mt-4 text-text-muted text-[0.95rem]">A professional driver handles the logistics while the group stays focused on the experience, the scenery, and shared moments.</p>
+      </div>
+      <div class="reveal lux-card p-8">
+        <h3 class="font-display text-[1.75rem]">Option 2: Self-Drive</h3>
+        <p class="mt-5 text-text-secondary leading-7">Best suited for travelers who specifically enjoy driving and want full control over timing and stops.</p>
+        <p class="mt-4 text-text-muted text-[0.95rem]">A flexible alternative, but less seamless for a group journey with multiple couples and luggage.</p>
+      </div>
+    </div>
+
+  </div>
+   <div class="page-num">09</div>
+</div>
+
+<!-- CLOSING -->
+<div class="slide" data-slide="11">
+  <img class="full-image" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/571479614a04fef8ce09d5a782d12cac1815f78a.jpg" alt="Sibiu closing">
+  <div class="image-overlay" style="background:linear-gradient(180deg, rgba(7,6,5,.32) 0%, rgba(7,6,5,.66) 58%, rgba(7,6,5,.84) 100%)"></div>
+  <div class="gradient-mesh">
+  </div>
+  <div class="content">
+    <div class="max-w-[920px] mx-auto text-center">
+      <div class="reveal mini-label mb-6">The Promise</div>
+      <h2 class="reveal font-display text-[clamp(3rem,6vw,5.6rem)] leading-[0.95]">A seamless, curated journey through one of Europe's last authentic destinations.</h2>
+      <p class="reveal mt-8 text-[1.13rem] leading-8 max-w-[760px] mx-auto text-text-secondary">This itinerary is for guests seeking beauty, rhythm, and real authenticity. Not just a list of famous places.</p>
+      <div class="reveal mt-12 flex justify-center"><div class="deco-line"></div></div>
+       <p class="reveal mt-10 text-[0.95rem] tracking-[0.18em] text-text-muted uppercase">Ready when you are.</p>
+    </div>
+  </div>
+  <div class="page-num">Closing</div>
+</div>
+
+
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="event.stopPropagation();closeLightbox()">&#10005;</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav-controls">
+  <button class="nav-btn" onclick="changeSlide(-1)">&#8249;</button>
+  <div class="slide-dots" id="dots"></div>
+  <button class="nav-btn" onclick="changeSlide(1)">&#8250;</button>
+   <span class="slide-counter" id="counter">1 / 11</span>
+</div>
+
+<script>
+let current=1;
+const total=document.querySelectorAll('.slide').length;
+const dotsContainer=document.getElementById('dots');
+const counter=document.getElementById('counter');
+
+for(let i=1;i<=total;i++){
+  const dot=document.createElement('div');
+  dot.className='dot'+(i===1?' active':'');
+  dot.onclick=()=>goToSlide(i);
+  dotsContainer.appendChild(dot)
+}
+
+function goToSlide(n){
+  const prev=document.querySelector('.slide.active');
+  const next=document.querySelector(`.slide[data-slide="${n}"]`);
+  if(prev)prev.classList.remove('active');
+  if(next){
+    next.classList.add('active');
+    animateSlide(next)
+  }
+  current=n;
+  updateNav()
+}
+
+function changeSlide(dir){
+  let next=current+dir;
+  if(next<1)next=total;
+  if(next>total)next=1;
+  goToSlide(next)
+}
+
+function updateNav(){
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i+1===current));
+  counter.textContent=current+' / '+total
+}
+
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('lightbox').classList.contains('open'))return;
+  if(e.key==='ArrowRight'||e.key===' '){
+    e.preventDefault();
+    changeSlide(1)
+  }
+  if(e.key==='ArrowLeft'){
+    e.preventDefault();
+    changeSlide(-1)
+  }
+});
+
+let touchStartX=0;
+document.addEventListener('touchstart',e=>{
+  touchStartX=e.touches[0].clientX
+});
+document.addEventListener('touchend',e=>{
+  const diff=touchStartX-e.changedTouches[0].clientX;
+  if(Math.abs(diff)>50)changeSlide(diff>0?1:-1)
+});
+
+function animateSlide(slide){
+  slide.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transition='none';
+    el.style.opacity='0';
+    el.style.transform='translateY(20px)';
+    el.offsetHeight;
+    const delay=i*.08;
+    el.style.transition=`opacity .45s ease ${delay}s, transform .45s ease ${delay}s`;
+    el.style.opacity='1';
+    el.style.transform='translateY(0px)'
+  })
+}
+
+document.addEventListener('mousemove',e=>{
+  const spotlight=document.querySelector('.mouse-spotlight');
+  if(spotlight){
+    const rgb=getComputedStyle(document.documentElement).getPropertyValue('--glow-color-rgb').trim()||'214,177,124';
+    spotlight.style.background=`radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(${rgb},0.05), transparent 40%)`
+  }
+});
+
+function openLightbox(src){
+  document.getElementById('lb-img').src=src;
+  document.getElementById('lightbox').classList.add('open')
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open')
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
+
+
+animateSlide(document.querySelector('.slide.active'));
+</script>
+
+</body>
+</html>
