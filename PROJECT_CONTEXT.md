@@ -31,8 +31,8 @@ Interactive HTML brochure showcasing a luxury 7-day journey through Romania and 
 7. Day 4 — Sighișoara → Biertan → Sibiu
 8. Day 5 — Sibiu & Corvin Castle (combined, no longer OR option)
 9. Day 6 — Transfăgărășan → Bucharest (includes Posada Vidraru dinner)
-10. Transport — Option 1: Private Van & Driver / Option 2: Self-Drive
-11. Additional Experiences — 5 individual cards + 1 grouped wine card (Villa Vinea, Vinothek, Apoldium, Bethlen-Haller + Jidvei)
+10. Additional Experiences — 5 individual cards + 1 grouped wine card (Villa Vinea, Vinothek, Apoldium, Bethlen-Haller + Jidvei)
+11. Estimated Costs — 2 options (Self-Drive vs. Fully Guided Tour) with Font Awesome icons
 12. Closing — "The Promise"
 
 ## Stay Blocks
@@ -50,11 +50,13 @@ Interactive HTML brochure showcasing a luxury 7-day journey through Romania and 
 - Mouse spotlight effect
 - Fully responsive with mobile scroll support
 - Lightbox for image galleries
+- Font Awesome 6.5.1 solid icons
 
 ## Technical Stack
 - HTML5 + Tailwind CSS (CDN v4)
 - Vanilla JavaScript
 - Google Fonts (Cormorant Garamond + Inter)
+- Font Awesome 6.5.1 (solid icons)
 - No build process — runs directly in browser
 - Images stored locally in /images/
 
@@ -77,18 +79,19 @@ Interactive HTML brochure showcasing a luxury 7-day journey through Romania and 
 - Viscri — Villages with Fortified Churches in Transylvania (composite site)
 - Biertan — Villages with Fortified Churches in Transylvania (composite site)
 
-## Changes Applied (from opencode change files)
+## Changes Applied
 - Removed hotel slide, added Stay blocks to each day
 - Shortened restaurant descriptions to single line
 - Compact layout spacing (space-y-2, smaller text)
-- Updated transport slide with two options (subtly favoring van)
+- Removed Transport slide (no longer needed)
+- Redesigned Estimated Costs slide with compact layout and Font Awesome icons
+- Added real fuel pricing (Renault Trafic, 10 RON/L diesel)
 - Improved text polish across all slides
 - Added Additional Experiences slide with 6 cards (5 individual + 1 grouped wine)
 - Combined Day 5 (Sibiu & Corvin Castle, removed OR choice)
 - Removed particle canvas effect (was causing artifact)
 - All images migrated to local /images/ folder
 - Added UNESCO World Heritage labels (brick color #c4643d)
-- Fixed page numbering for 12-slide structure
 
 ## Git Info
 - Remote: git@github.com:orvalus/romania-trip-brochure.git
@@ -97,6 +100,7 @@ Interactive HTML brochure showcasing a luxury 7-day journey through Romania and 
 
 ## Current Status
 ✅ 12 slides complete and functional
+✅ Transport slide removed (12 slides → 12 slides, renumbered)
 ✅ All images local and optimized
 ✅ Design system consistent
 ✅ Navigation working perfectly
@@ -106,4 +110,4 @@ Interactive HTML brochure showcasing a luxury 7-day journey through Romania and 
 
 ---
 Last Updated: May 1, 2026
-Version: 2.0
+Version: 2.1
